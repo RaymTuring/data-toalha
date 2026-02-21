@@ -1,0 +1,7 @@
+node_modules/
+data_toalha.db
+*.log
+tmp*
+package-lock.json
+.DS_Store
+ollama_tasks.log
