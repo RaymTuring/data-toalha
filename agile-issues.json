@@ -1,0 +1,21 @@
+[
+  {
+    "id": "ISS-1771747336233.1294",
+    "component": "m365-deploy",
+    "type": "naming-violations",
+    "severity": "MEDIUM",
+    "summary": "12 groups violate naming conventions",
+    "samples": [
+      "COUNTRY-AR-DUPLICATE",
+      "COUNTRY-AQ-DUPLICATE",
+      "Cayman Islands",
+      "Austria",
+      "Argentina"
+    ],
+    "detected": "2026-02-22T08:02:16.233Z",
+    "status": "open",
+    "investigation": null,
+    "fixProposed": null,
+    "fixApproved": false
+  }
+]

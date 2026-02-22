@@ -97,6 +97,38 @@
 
 ---
 
+## AGILE AUDIT (2026-02-22)
+
+### Cron Job Effectiveness: 81.25%
+| Metric | Value |
+|--------|-------|
+| Operations attempted | 539 (355 users + 164 groups + 20 dedup) |
+| Errors | 0 |
+| Success rate | 100% |
+| Phase completion | 62.5% (5/8 phases done) |
+| Bot uptime | 100% (all healthchecks UP) |
+
+### Growth (24h)
+| Resource | Before | After | Growth |
+|----------|--------|-------|--------|
+| Users | 297 | 652 | +119.5% |
+| Groups | 416 | 580 | +39.4% |
+
+### Bugs Fixed (2026-02-22)
+| Bug | Description | Fix |
+|-----|-------------|-----|
+| XP-XP- naming | Deploy script creates `XP-XP-ARCH-106` instead of `XP-ARCH-106` | Fixed prefix logic in m365-hourly-deploy.sh |
+| DUPLICATE groups | 7 DUPLICATE-tagged groups remain | Added fix_naming phase to deploy script |
+| terminal-nlp-bot DOWN | Bot unresponsive, no auto-restart | Redesigned as agile monitor bot + added to healthcheck |
+
+### New Bot: @opencode_terminalbot v2.0 (Agile Monitor)
+- **Role**: Agile scrum master / infrastructure monitor
+- **Auto-scans**: Every 15 min for failures
+- **Auto-investigates**: HIGH severity issues using AI
+- **Auto-fixes**: LOW risk issues (bot restarts, etc.)
+- **Human approval**: Required for MEDIUM/HIGH risk fixes
+- **Commands**: /audit, /issues, /investigate, /approve, /effectiveness, /sprint
+
 ## FILES CREATED/MODIFIED
 
 | File | Action | Purpose |
@@ -105,8 +137,11 @@
 | ~/.openclaw/workspace/GLOBAL_GOALS.md | CREATED | This file - goals & problem analysis |
 | ~/.openclaw/workspace/m365-deploy-state.json | CREATED | Deployment state tracking |
 | ~/.openclaw/workspace/m365-deploy.log | CREATED | Deployment log |
-| ~/scripts/m365-hourly-deploy.sh | CREATED | Hourly M365 resource creation |
+| ~/.openclaw/workspace/agile-issues.json | CREATED | Issue tracker for agile monitor |
+| ~/scripts/m365-hourly-deploy.sh | MODIFIED | Fixed XP-XP- bug, added fix_naming phase |
 | ~/scripts/m365-hourly-status.sh | CREATED | Hourly live status report |
+| ~/scripts/opencode-terminalbot.js | CREATED | Agile monitor bot (replaces terminal-nlp-bot) |
+| ~/scripts/bots-healthcheck.sh | MODIFIED | Added opencode_terminalbot monitoring |
 | ~/.claude/telegram-claude-bridge/server.js | MODIFIED | Anti-loop + SYS_PROMPT fixes |
 | ~/scripts/xpiritsocbot.js | MODIFIED | Anti-loop + SYS_PROMPT fixes |
 
@@ -116,4 +151,4 @@
 |----------|--------|---------|
 | 0 * * * * | m365-hourly-deploy.sh | Create groups/users in batches |
 | 30 * * * * | m365-hourly-status.sh | Live status to Telegram group |
-| */15 * * * * | bots-healthcheck.sh | Bot health monitoring |
+| */15 * * * * | bots-healthcheck.sh | Bot health monitoring (incl. agile monitor) |

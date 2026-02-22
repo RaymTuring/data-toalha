@@ -1,1 +1,1 @@
-{"phase":"dedup_groups","groups_created":0,"users_created":0,"errors":0,"last_country_idx":0,"last_user_idx":0,"last_dept_idx":0,"completed_phases":[]}
+{"phase": "create_users", "groups_created": 0, "users_created": 80, "errors": 0, "last_country_idx": 0, "last_user_idx": 80, "last_dept_idx": 80, "completed_phases": ["dedup_groups", "create_country_groups", "create_dt_country_groups", "create_polling_groups", "create_dept_groups"]}
