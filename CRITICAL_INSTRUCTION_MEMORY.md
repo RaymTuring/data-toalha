@@ -1,0 +1,1 @@
+CRITICAL: Every hour, post a full text-based status report to the Telegram group. No HTML. No summary-only. Full transparency on tenant changes and mission progress. This is a permanent directive from MC Jesus.

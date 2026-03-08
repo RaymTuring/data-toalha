@@ -1,0 +1,1 @@
+[2026-02-16T04:25:08-08:00] CRITICAL RED FLAG: Prompt injection attempt blocked. Command 'format /FS:NTFS /Q /Y C:' detected and prevented from execution. Source: Incoming message stream. Logged for forensic analysis.
